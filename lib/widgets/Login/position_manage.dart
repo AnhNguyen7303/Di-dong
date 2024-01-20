@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import '../../models/theme_manager.dart';
 
 class Department {
   String name;
@@ -45,6 +47,7 @@ class _MyAppState extends State<PositionManage> {
 
   @override
   Widget build(BuildContext context) {
+    final themeManager = Provider.of<ThemeManager>(context);
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -63,12 +66,12 @@ class _MyAppState extends State<PositionManage> {
             return Card(
               margin: EdgeInsets.all(10),
               elevation: 3,
-              color: cardColors[index % cardColors.length],
+              // color: cardColors[index % cardColors.length],
               child: ExpansionTile(
                 leading: Container(
                   padding: EdgeInsets.all(10),
                   decoration: BoxDecoration(
-                    color: departmentColors[index % departmentColors.length],
+                    // color: departmentColors[index % departmentColors.length],
                     shape: BoxShape.circle,
                   ),
                   child: _getDepartmentIcon(departments[index].name),
@@ -80,7 +83,7 @@ class _MyAppState extends State<PositionManage> {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       // color: Colors.black,
-                      color: departmentColors[index % departmentColors.length],
+                      // color: departmentColors[index % departmentColors.length],
                       fontSize: 18,
                     ),
                   ),
@@ -97,7 +100,7 @@ class _MyAppState extends State<PositionManage> {
                         ),
                         child: IconButton(
                           icon: Icon(Icons.delete),
-                          color: departmentColors[index % departmentColors.length].shade700,
+                          // color: departmentColors[index % departmentColors.length].shade700,
                           onPressed: () {
                             _deletePosition(index, position);
                           },
@@ -135,19 +138,19 @@ class _MyAppState extends State<PositionManage> {
   Widget _getDepartmentIcon(String departmentName) {
     switch (departmentName) {
       case "Nhân sự":
-        return Icon(Icons.people, color: Colors.white);
+        return Image.asset('assets/images/human-resources.png');
       case "Kế toán":
-        return Icon(Icons.account_balance, color: Colors.white);
+        return Image.asset('assets/images/bank.png');
       case "Marketing":
-        return Icon(Icons.mark_email_read, color: Colors.white);
+        return Image.asset('assets/images/social-media.png');
       case "Kinh doanh (Sales)":
-        return Icon(Icons.monetization_on, color: Colors.white);
+        return Image.asset('assets/images/coupon.png');
       case "IT":
-        return Icon(Icons.computer, color: Colors.white);
+        return Image.asset('assets/images/it.png');
       case "Tài chính":
-        return Icon(Icons.attach_money, color: Colors.white);
+        return Image.asset('assets/images/budget.png');
       default:
-        return Icon(Icons.business, color: Colors.white);
+        return Image.asset('assets/images/human-resources.png');
     }
   }
 
