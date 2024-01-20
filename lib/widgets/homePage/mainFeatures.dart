@@ -105,7 +105,7 @@ class HealthNeeds extends StatelessWidget {
                                           } else if(index == customIcons.length - 3){
                                             Navigator.pushNamed(context, "/employee");
                                           } else if(index == customIcons.length - 4){
-                                            Navigator.pushNamed(context, "/profile");
+                                            Navigator.pushNamed(context, "/position");
                                           } 
                                         }, 
                                         borderRadius: BorderRadius.circular(90),

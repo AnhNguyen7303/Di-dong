@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:home/widgets/Login/get_started_screen.dart';
+import 'package:home/widgets/Login/position_manage.dart';
 import 'package:provider/provider.dart';
 import '/models/theme_manager.dart';
 import '/widgets/settings.dart';
@@ -31,13 +33,14 @@ class MyApp extends StatelessWidget {
       // home: MyHomePage(),
       initialRoute: "/",
         routes: {
-          "/": (context) => const HomePage(),
+          "/": (context) => const GetStartedScreen(),
           "/homePage": (context) => const HomePage(),
           "/introductionScreen": (context) => const IntroductionScreen(),
           "/settings": (context) => SettingsPage(),
           "/profile": (context) => const ProfileScreen(),
           "/newpage": (context) => MyCalender(),
           "/employee": (context) => Employee(),
+          "/position": (context) => PositionManage(),
         }
     );
   }
