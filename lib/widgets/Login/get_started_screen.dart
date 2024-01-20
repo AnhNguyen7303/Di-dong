@@ -11,7 +11,7 @@ class GetStartedScreen extends StatefulWidget {
 }
 
 class _GetStartedScreenState extends State<GetStartedScreen> {
-  List images = ["assets/imgames/hrm-01.png", "assets/images/hrm-02.png"];
+  List images = ["assets/images/hrm-01.png", "assets/images/hrm-02.png"];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
