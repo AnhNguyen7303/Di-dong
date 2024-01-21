@@ -112,7 +112,7 @@ class _EmployeeState extends State<Employee> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
-                        width: MediaQuery.of(context).size.width *0.7,
+                        width: MediaQuery.of(context).size.width *0.65,
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
@@ -141,7 +141,7 @@ class _EmployeeState extends State<Employee> {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 10),
+                        margin: EdgeInsets.only(left: 10, right: 10),
                         child: Row(
                           children: [
                             IconButton(
@@ -253,15 +253,15 @@ class _EmployeeState extends State<Employee> {
                               }, 
                               icon: Icon(Icons.edit)
                               ),
-                            InkWell(
-                              onTap: () async{
-                                if(await confirm(context)){
-                                  xoaNhanVien(nv.ma);
-                                }
-                                return;
-                              },
-                              child: Icon(Icons.delete),
-                            )
+                              InkWell(
+                                onTap: () async{
+                                  if(await confirm(context)){
+                                    xoaNhanVien(nv.ma);
+                                  }
+                                  return;
+                                },
+                                child: Icon(Icons.delete),
+                              )
                           ],
                         ),
                       )
