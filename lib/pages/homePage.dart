@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             const Text("Hi, Đức Anh"),
             Text(
-              "How are you feeling today?",
+              "Hôm nay bạn cảm thấy thế nào?",
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
