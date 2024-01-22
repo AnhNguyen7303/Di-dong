@@ -6,6 +6,12 @@ import '/widgets/components/myBottom.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({Key? key}) : super(key: key);
+  
+  Color getLogoutButtonColor(BuildContext context, bool isDarkMode) {
+  // return isDarkMode ? Colors.blue.shade400 : Theme.of(context).primaryColor;
+   return isDarkMode ? Colors.purple.shade800 : Colors.blue.shade400;
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,11 +63,19 @@ class ProfileScreen extends StatelessWidget {
             const SizedBox(height: 20,),
             SizedBox(
               width: double.infinity,
+              // child: ElevatedButton(
+              //   onPressed: () {},
+              //   style: ElevatedButton.styleFrom(
+              //     padding: const EdgeInsets.all(15),
+              //     primary: Colors.blue,
+              //   ),
+              //   child: const Text('Đăng xuất', style: TextStyle(color: Colors.white)),
+              // ),
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.all(15),
-                  primary: Colors.blue,
+                  primary: getLogoutButtonColor(context, isDarkMode), // Sử dụng màu chủ đề
                 ),
                 child: const Text('Đăng xuất', style: TextStyle(color: Colors.white)),
               ),

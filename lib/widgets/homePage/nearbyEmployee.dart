@@ -14,6 +14,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeManager = Provider.of<ThemeManager>(context);
     final fontSize = themeManager.fontSize;
+    final appBar = themeManager.appBarColor;
 
     return Text(
       data,

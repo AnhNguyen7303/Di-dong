@@ -1,20 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import '/models/theme_manager.dart';
+import 'package:provider/provider.dart';
 
 class UpcomingCard extends StatelessWidget {
   const UpcomingCard({
     Key? key,
   }) : super(key: key);
+    Color getLogoutButtonColor(BuildContext context, bool isDarkMode) {
+  // return isDarkMode ? Colors.blue.shade400 : Theme.of(context).primaryColor;
+   return isDarkMode ? Colors.purple.shade800 : Colors.blue.shade400;
+  }
 
   @override
   Widget build(BuildContext context) {
+    final themeManager = Provider.of<ThemeManager>(context);
+    final isDarkMode = themeManager.themeMode == ThemeMode.dark;
+
     return Container(
       width: double.maxFinite,
       height: 150,
       padding: const EdgeInsets.symmetric(vertical: 22, horizontal: 20),
       decoration: BoxDecoration(
         // color: Theme.of(context).primaryColor.withOpacity(0.8),
-        color: Colors.purple[500],
+        // color: Colors.purple[800],
+        color: getLogoutButtonColor(context, isDarkMode),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(

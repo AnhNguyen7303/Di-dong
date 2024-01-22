@@ -64,7 +64,7 @@ class ThemeManager with ChangeNotifier {
     case 'Lớn':
       return 18;
     case 'Rất lớn':
-      return 30;
+      return 22;
     default:
       return 14;
   }
